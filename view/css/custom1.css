@@ -1,0 +1,88 @@
+/* ------------- custom loader -------------- */
+.resp-loader {
+  font-size: 18px;
+  font-weight: 600;
+  height: 60px;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: -45px;
+  margin-bottom: -23px;
+}
+.req-loader {
+  font-size: 18px;
+  font-weight: 600;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  top: -3rem;
+  left: calc((100% - 100px) / 2);
+  text-align: center;
+}
+.req-loader .graphic,
+.resp-loader .graphic {
+  height: 80px;
+}
+.req-loader .loader {
+  transform-origin: 25%;
+}
+.resp-loader .loader {
+  transform: rotate(90deg);
+  transform-origin: 25%;
+}
+.req-loader .loader .diamond,
+.resp-loader .loader .diamond {
+  position: absolute;
+  background-color: currentColor;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 2px;
+  -webkit-transform: translateY(0) rotate(45deg) scale(0);
+  transform: translateY(0) rotate(45deg) scale(0);
+  -webkit-animation: diamonds 1.5s linear infinite;
+  animation: diamonds 1.5s linear infinite;
+}
+.req-loader .loader .diamond:nth-child(1),
+.resp-loader .loader .diamond:nth-child(1) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+.req-loader .loader .diamond:nth-child(2),
+.resp-loader .loader .diamond:nth-child(2) {
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+.req-loader .loader .diamond:nth-child(3),
+.resp-loader .loader .diamond:nth-child(3) {
+  -webkit-animation-delay: -3s;
+  animation-delay: -3s;
+}
+.req-loader .loader .diamond:nth-child(4),
+.resp-loader .loader .diamond:nth-child(4) {
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+}
+@-webkit-keyframes diamonds {
+  50% {
+    -webkit-transform: translateY(-2em) rotate(45deg) scale(1);
+    transform: translateY(-2em) rotate(45deg) scale(1);
+  }
+  to {
+    -webkit-transform: translateY(-4em) rotate(45deg) scale(0);
+    transform: translateY(-4em) rotate(45deg) scale(0);
+  }
+}
+@keyframes diamonds {
+  50% {
+    -webkit-transform: translateY(-2em) rotate(45deg) scale(1);
+    transform: translateY(-2em) rotate(45deg) scale(1);
+  }
+  to {
+    -webkit-transform: translateY(-4em) rotate(45deg) scale(0);
+    transform: translateY(-4em) rotate(45deg) scale(0);
+  }
+}
